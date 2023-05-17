@@ -1,9 +1,7 @@
 import threading
 import time
 
-def mostrar(ms, espera):
-    time.sleep(espera)
-    print(ms)
+espera = 0
 
 mensajes = [
     "Hola UK",
@@ -11,7 +9,11 @@ mensajes = [
     "Adiós UK"
 ]
 
-espera = 0
+def mostrar(ms, espera):
+    time.sleep(espera)
+    print(ms)
+
+
 
 for ms in mensajes:
     ejecutar = threading.Thread(target=mostrar, args=(ms, espera))
