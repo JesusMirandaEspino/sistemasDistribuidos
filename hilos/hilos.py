@@ -6,11 +6,14 @@ def mostrar(ms, espera):
     print(ms)
 
 mensajes = [
-    ("Hola UK", 0),
-    ("Procesando", 5),
-    ("Adiós UK", 10)
+    "Hola UK",
+    "Procesando",
+    "Adiós UK"
 ]
 
-for ms, espera in mensajes:
+espera = 0
+
+for ms in mensajes:
     ejecutar = threading.Thread(target=mostrar, args=(ms, espera))
+    espera += 5
     ejecutar.start()
